@@ -3,7 +3,6 @@
 export(extractData)
 export(oscOrNot)
 import(MASS)
-import(base)
 import(mnormt)
 import(DEoptim)
 import(stats)
