@@ -11,7 +11,9 @@ The goal of ODeGP is to ...
 You can install the development version of ODeGP like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+install.packages("devtools")
+library("devtools")
+devtools::install_github("shabnamsahay/ODeGP")
 ```
 
 ## Example
@@ -19,7 +21,14 @@ You can install the development version of ODeGP like so:
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(ODeGP)
-## basic example code
+library("ODeGP")
+
+fname_file <- './dataset.csv' 
+threshold <- 10
+nonstat <- TRUE
+
+d <- extractData(fname_file, errorbars = FALSE)
+bayesF <- oscOrNot(d, nonstat, threshold, plotting=TRUE)
+
 ```
 
