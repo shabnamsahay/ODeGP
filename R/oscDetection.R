@@ -6,6 +6,7 @@ oscOrNot <- function(d, nonstat=TRUE, threshold=10, plotting=FALSE, Q=1) {
   #' @param d The dataset to be tested, a list with features X (time points), Y (averaged replicates), S (error bars).
   #' @param nonstat Do you want to use the nonstationary kernel? Defaults to TRUE.
   #' @param threshold The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 10.
+  #' @param plotting Do you want a plot of the optimised non-stationary kernel posterior on the input data? Defaults to FALSE.
   #' @export
   #' @examples
   #' cat_function()
@@ -52,7 +53,7 @@ kernelComparison <- function(d, altKern, plotting=FALSE, Q=1) {
   nulInv <- getPosterior(d, nulResult, nulKern, FALSE)
 
   #alternate hypothesis fitting
-  altResult <- getHyperparameters(d, altKern, altComponents)  
+  altResult <- getHyperparameters(d, altKern, altComponents)
   altInv <- getPosterior(d, altResult, altKern, plotting, altComponents)
   detectTimePeriod(d, altResult, altKern, altInv)
 
@@ -92,7 +93,7 @@ plotSimpleData <- function(d) {
   #plotting the raw data
   rawdf <- data.frame(d$X, d$Y,d$S)
   names(rawdf) <- c("X", "Y", "S")
-  
+
   # Default point plot w/error bars
   p<- ggplot(rawdf, aes(x=X, y=Y)) +
     geom_errorbar(aes(ymin=Y-S, ymax=Y+S), size=0.81, width=0.8,
@@ -109,11 +110,11 @@ plotSimpleData <- function(d) {
   #dY_extra <- 0.5*(max(d$Y) - min(d$Y))
 
   p <- p +  theme_bw() +
-    
+
     #coord_cartesian(ylim = c(min(d$Y)-dY_extra, max(d$Y)+dY_extra)) +
     xlab('Time (hrs)')+
     ylab('Arbitrary units') +
-    
+
     theme(#plot.title = element_text(size = 20, hjust = 0.5),
           axis.line.x = element_line(color="black", linewidth = 0.5),
           axis.line.y = element_line(color="black", linewidth = 0.5),

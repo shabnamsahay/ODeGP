@@ -32,3 +32,5 @@ bayesF <- oscOrNot(d, nonstat, threshold, plotting=TRUE)
 
 ```
 
+The sample <code>dataset.csv</code> is provided in the top-level of this repository.
+

@@ -111,6 +111,12 @@ getPosterior <- function(dataset, res, kernel, plotting=FALSE, Q=NULL) {
   confidence_bounds <- rep(0,m)
   for (i in 1:m) confidence_bounds[i] <- 2*sqrt(cov_x[i,i])
 
+  # write posterior to a csv file
+  df <- data.frame(test, mu_x, mu_x+confidence_bounds, mu_x-confidence_bounds)
+  names(df) <- c("Time", "Posterior Mean", "Lower CB", "Upper CB")
+  write.csv(x=df, file=paste(kernel,"PosteriorData.csv",sep=""))
+  
+
   if(plotting) {
 
     #setting up Y co-ordinate limits for plotting
@@ -146,11 +152,6 @@ getPosterior <- function(dataset, res, kernel, plotting=FALSE, Q=NULL) {
       theme(legend.position = "none")
 
     print(p)
-
-    # write posterior to a csv file
-    df <- data.frame(test, mu_x, mu_x+confidence_bounds, mu_x-confidence_bounds)
-    names(df) <- c("Time", "Posterior Mean", "Lower CB", "Upper CB")
-    write.csv(x=df, file=paste(kernel,"PosteriorData.csv",sep=""))
 
   }
 
@@ -272,7 +273,7 @@ plotPosteriorSamples <- function(dataset, test, mu_x, cov_x, bounds_x) {
   #dY_extra <- 0.5*(max(dataset$Y) - min(dataset$Y))
 
   post <- post + theme_bw() +
-    
+
     # coord_cartesian(ylim = c(min(dataset$Y)-dY_extra, max(dataset$Y)+dY_extra)) +
     xlab('Time (hrs)')+
     ylab('Arbitrary units') +
