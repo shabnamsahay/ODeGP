@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ODeGP is to ...
+**O**scillation **De**tection with **G**aussian **P**rocesses
 
 ## Installation
 
