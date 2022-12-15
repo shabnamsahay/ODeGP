@@ -12,6 +12,8 @@ oscOrNot(d, nonstat = TRUE, threshold = 10, plotting = FALSE, Q = 1)
 \item{nonstat}{Do you want to use the nonstationary kernel? Defaults to TRUE.}
 
 \item{threshold}{The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 10.}
+
+\item{plotting}{Do you want a plot of the optimised non-stationary kernel posterior on the input data? Defaults to FALSE.}
 }
 \description{
 This function is the main interface function that is called to determine whether a dataset is oscillatory or not.
