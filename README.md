@@ -25,10 +25,10 @@ This is a basic example of how to run ODeGP. The sample file <code>dataset.csv</
 ``` r
 library("ODeGP")
 
-fname_file <- './dataset.csv' 
+filepath <- './dataset.csv' 
 threshold <- 10
 
-d <- extractData(fname_file, errorbars = FALSE)
+d <- extractData(filepath, errorbars = FALSE)
 bayesF <- oscOrNot(d, threshold, plotting=TRUE)
 
 ```

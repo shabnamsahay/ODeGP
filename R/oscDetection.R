@@ -55,6 +55,7 @@ kernelComparison <- function(d, altKern, plotting=FALSE, Q=1) {
   #alternate hypothesis fitting
   altResult <- getHyperparameters(d, altKern, altComponents)
   altInv <- getPosterior(d, altResult, altKern, plotting, altComponents)
+  cat("==================================================\n")
   detectTimePeriod(d, altResult, altKern, altInv)
 
   altMLL <- marginalLikelihood(altResult$par, d, altKern, print_terms=TRUE)
