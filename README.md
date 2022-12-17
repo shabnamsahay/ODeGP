@@ -8,7 +8,7 @@
 
 ## Installation
 
-If not installed, R can be downloaded from the [CRAN](https://cran.r-project.org/) homepage. RStudio is available for download [here](https://posit.co/products/open-source/rstudio/). A detailed guide to installation of both R and RStudio can be found at [this](https://rstudio-education.github.io/hopr/starting.html) webpage.
+If not installed, R can be downloaded from the [CRAN](https://cran.r-project.org/) homepage. RStudio is available for download [here](https://posit.co/products/open-source/rstudio/). A detailed guide to installation of both R and RStudio can be found on [this](https://rstudio-education.github.io/hopr/starting.html) webpage.
 
 You can install the development version of ODeGP like so:
 
@@ -27,10 +27,9 @@ library("ODeGP")
 
 fname_file <- './dataset.csv' 
 threshold <- 10
-nonstat <- TRUE
 
 d <- extractData(fname_file, errorbars = FALSE)
-bayesF <- oscOrNot(d, nonstat, threshold, plotting=TRUE)
+bayesF <- oscOrNot(d, threshold, plotting=TRUE)
 
 ```
 

@@ -4,14 +4,14 @@
 \alias{oscOrNot}
 \title{Oscillatory or not?}
 \usage{
-oscOrNot(d, nonstat = TRUE, threshold = 10, plotting = FALSE, Q = 1)
+oscOrNot(d, threshold = 10, nonstat = TRUE, plotting = FALSE, Q = 1)
 }
 \arguments{
 \item{d}{The dataset to be tested, a list with features X (time points), Y (averaged replicates), S (error bars).}
 
-\item{nonstat}{Do you want to use the nonstationary kernel? Defaults to TRUE.}
-
 \item{threshold}{The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 10.}
+
+\item{nonstat}{Do you want to use the nonstationary kernel? Defaults to TRUE.}
 
 \item{plotting}{Do you want a plot of the optimised non-stationary kernel posterior on the input data? Defaults to FALSE.}
 }

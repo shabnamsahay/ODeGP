@@ -7,9 +7,9 @@
 extractData(filename, errorbars = FALSE)
 }
 \arguments{
-\item{filename}{A csv file containing the data in column-wise format. If n un-merged replicates are present, the column headings should be Time, Column 1, Column 2, ... , Column n (with the ith column containing the data from the ith replicate). If replicates have already been merged to produce mean values and error bars, the column headings should be X, Y, S (where X contains time, Y contains the mean values, and S contains the corresponding error bar values).}
+\item{filename}{A csv file containing the time-series data in column-wise format. If n un-merged replicates are present, the column headings should be Time, Column 1, Column 2, ... , Column n (with the ith column containing the data from the ith replicate). If replicates have already been merged to produce mean values and error bars, the column headings should be X, Y, S (where X contains time, Y contains the mean values, and S contains the corresponding error bar values).}
 
-\item{errorbars}{TRUE if replicates have been merged in the input data (resulting in errorbars already being present), else false.}
+\item{errorbars}{TRUE if replicates have been merged in the input data (resulting in errorbars already being present), else FALSE.}
 }
 \description{
 This function retrieves and pre-processes the dataset from the given file into a suitable format for ODeGP.
