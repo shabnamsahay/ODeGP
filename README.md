@@ -25,8 +25,8 @@ This is a basic example of how to run ODeGP. The sample file <code>dataset.csv</
 ``` r
 library("ODeGP")
 
-filepath <- './dataset.csv' 
-threshold <- 10
+filepath <- './dataset.csv'
+threshold <- 14
 
 d <- extractData(filepath, errorbars = FALSE)
 bayesF <- oscOrNot(d, threshold, plotting=TRUE)
@@ -36,5 +36,3 @@ bayesF <- oscOrNot(d, threshold, plotting=TRUE)
 On completion, the calculated Bayes factor for the data will be printed to the console, along with its comparison to the given threshold to determine whether the data is oscillatory or not. The non-stationary kernel's posterior will be saved to the file <code>nonstationaryPosteriorData.csv</code> in the working directory.
 
 More comprehensive running examples will be added shortly.
-
-

@@ -1,4 +1,4 @@
-oscOrNot <- function(d, threshold=10, nonstat=TRUE, plotting=FALSE, Q=1) {
+oscOrNot <- function(d, threshold=14, nonstat=TRUE, plotting=FALSE, Q=1) {
 
   #' Oscillatory or not?
   #'
