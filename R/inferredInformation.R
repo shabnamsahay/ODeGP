@@ -36,6 +36,6 @@ calculateStatistic <- function(altMLL, nulMLL) {
 modelSelection <- function(statistic, threshold) {
 
   cat("Bayes factor is",statistic,"and threshold taken is",threshold,"\n")
-  cat("If k trajectories from the same dataset are being analyzed simultaneously, a Bonferroni-type multiple-hypothesis correction can be applied by multiplying each Bayes factor, obtained independently, with (1-0.5^(1/k))/(0.5^(1/k)).")
+  cat("If k trajectories from the same dataset are being analyzed simultaneously, a Bonferroni-type multiple-hypothesis correction can be applied by multiplying each Bayes factor, obtained independently, with (1-0.5^(1/k))/(0.5^(1/k)).\n")
   return(statistic > threshold)
 }
