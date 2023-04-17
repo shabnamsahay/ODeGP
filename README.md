@@ -15,7 +15,7 @@ You can install the development version of ODeGP like so:
 ``` r
 install.packages("devtools")
 library("devtools")
-devtools::install_github("shabnamsahay/ODeGP")
+devtools::install_github("Shaonlab/ODeGP")
 ```
 
 ## Example

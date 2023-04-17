@@ -4,7 +4,7 @@
 \alias{oscOrNot}
 \title{Oscillatory or not?}
 \usage{
-oscOrNot(d, threshold = 10, nonstat = TRUE, plotting = FALSE, Q = 1)
+oscOrNot(d, threshold = 14, nonstat = TRUE, plotting = FALSE, Q = 1)
 }
 \arguments{
 \item{d}{The dataset to be tested, a list with features X (time points), Y (averaged replicates), S (error bars).}
