@@ -15,5 +15,5 @@ extractData(filename, errorbars = FALSE)
 This function retrieves and pre-processes the dataset from the given file into a suitable format for ODeGP.
 }
 \examples{
-cat_function()
+test_function()
 }

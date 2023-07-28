@@ -7,7 +7,7 @@ extractData <- function(filename, errorbars=FALSE) {
   #' @param errorbars TRUE if replicates have been merged in the input data (resulting in errorbars already being present), else FALSE.
   #' @export
   #' @examples
-  #' cat_function()
+  #' test_function()
 
   #read the csv into a dataframe
   df <- read.csv(filename)

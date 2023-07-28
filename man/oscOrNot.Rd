@@ -4,12 +4,21 @@
 \alias{oscOrNot}
 \title{Oscillatory or not?}
 \usage{
-oscOrNot(d, threshold = 14, nonstat = TRUE, plotting = FALSE, Q = 1)
+oscOrNot(
+  d,
+  threshold = 14,
+  detrend = TRUE,
+  nonstat = TRUE,
+  plotting = FALSE,
+  Q = 1
+)
 }
 \arguments{
 \item{d}{The dataset to be tested, a list with features X (time points), Y (averaged replicates), S (error bars).}
 
-\item{threshold}{The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 10.}
+\item{threshold}{The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 14.}
+
+\item{detrend}{Do you want to detrend the data via linear regression? Defaults to TRUE. If your data is already detrended OR you do not want to detrend the data at all, set this parameter to FALSE.}
 
 \item{nonstat}{Do you want to use the nonstationary kernel? Defaults to TRUE.}
 
@@ -19,5 +28,5 @@ oscOrNot(d, threshold = 14, nonstat = TRUE, plotting = FALSE, Q = 1)
 This function is the main interface function that is called to determine whether a dataset is oscillatory or not.
 }
 \examples{
-cat_function()
+test_function()
 }
