@@ -1,15 +1,16 @@
-oscOrNot <- function(d, threshold=14, nonstat=TRUE, plotting=FALSE, Q=1) {
+oscOrNot <- function(d, threshold=14, detrend=TRUE, nonstat=TRUE, plotting=FALSE, Q=1) {
 
   #' Oscillatory or not?
   #'
   #' This function is the main interface function that is called to determine whether a dataset is oscillatory or not.
   #' @param d The dataset to be tested, a list with features X (time points), Y (averaged replicates), S (error bars).
+  #' @param threshold The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 14.
+  #' @param detrend Do you want to detrend the data via linear regression? Defaults to TRUE. If your data is already detrended OR you do not want to detrend the data at all, set this parameter to FALSE.
   #' @param nonstat Do you want to use the nonstationary kernel? Defaults to TRUE.
-  #' @param threshold The cutoff value for the bayes factor for classifying oscillatory data. Defaults to 10.
   #' @param plotting Do you want a plot of the optimised non-stationary kernel posterior on the input data? Defaults to FALSE.
   #' @export
   #' @examples
-  #' cat_function()
+  #' test_function()
 
   #handling missing values
   d <- removeMissing(d)
@@ -18,7 +19,7 @@ oscOrNot <- function(d, threshold=14, nonstat=TRUE, plotting=FALSE, Q=1) {
   #if(plotting) plotSimpleData(d)
 
   #detrending the data
-  d <- detrend(d)
+  if(detrend) d <- detrendByRegression(d)
 
   #centering data so that m(X)=0 (posterior) is applicable
   d$Y <- d$Y - rep(mean(d$Y), length(d$Y))
@@ -65,7 +66,7 @@ kernelComparison <- function(d, altKern, plotting=FALSE, Q=1) {
 }
 
 
-detrend <- function(d) {
+detrendByRegression <- function(d) {
   relation <- lm(Y~X, data=d)
   tempv <- data.frame(X = d$X)
   result <- predict(relation, newdata=tempv)
